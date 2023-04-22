@@ -11,3 +11,7 @@ for _, Player in pairs(Players:GetPlayers()) do
     Box.Color3 = Color3.new(0, 1, 0)
     Box.Parent = Camera
 end
+
+wait(1)
+
+game.Workspace.Camera.BoxHandleAdornment:Destory()
