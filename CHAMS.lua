@@ -26,7 +26,9 @@ local function toggleHighlight()
         end)
         
         game.Players.PlayerRemoving:Connect(function(playerRemoved)
-            playerRemoved.Character.HumanoidRootPart.Highlight:Destroy()
+            if playerRemoved.Character and playerRemoved.Character:FindFirstChild("HumanoidRootPart") and playerRemoved.Character.HumanoidRootPart:FindFirstChild("Highlight") then
+                playerRemoved.Character.HumanoidRootPart.Highlight:Destroy()
+            end
         end)
     else
         for _, player in ipairs(game.Players:GetChildren()) do
